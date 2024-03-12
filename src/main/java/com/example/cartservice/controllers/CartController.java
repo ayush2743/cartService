@@ -1,7 +1,6 @@
 package com.example.cartservice.controllers;
 
 import com.example.cartservice.models.Cart;
-import com.example.cartservice.models.Product;
 import com.example.cartservice.services.CartService;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,7 +28,7 @@ public class CartController {
         //GET IN DATE RANGE
 
         @GetMapping("/carts/user/{userid}")
-        List<Cart> getUserCarts(@PathVariable("userid") Long userid) {
+        public List<Cart> getUserCarts(@PathVariable("userid") Long userid) {
             return cartService.getUserCarts(userid);
         }
 
